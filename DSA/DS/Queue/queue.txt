@@ -1,0 +1,79 @@
+**Queue Data Structure**
+
+A **queue** is a linear data structure that follows the **FIFO (First In, First Out)** principle. This means that the element added first will be removed first, similar to a real-life queue (e.g., people standing in line at a ticket counter).
+
+---
+
+## **Types of Queues**
+1. **Simple Queue (FIFO)** – Basic queue where elements are added at the rear and removed from the front.
+2. **Circular Queue** – The last position is connected to the first, forming a loop.
+3. **Priority Queue** – Elements are dequeued based on priority rather than order.
+4. **Deque (Double-Ended Queue)** – Allows insertion and deletion from both ends.
+
+---
+
+## **Operations on a Queue**
+1. **Enqueue(x)** – Adds an element `x` to the rear of the queue.
+2. **Dequeue()** – Removes an element from the front of the queue.
+3. **Front() / Peek()** – Retrieves the front element without removing it.
+4. **IsEmpty()** – Checks if the queue is empty.
+5. **IsFull()** – Checks if the queue is full (in a fixed-size queue).
+
+---
+
+## **Applications of Queues**
+✅ **Task Scheduling** – OS process scheduling, job scheduling  
+✅ **Data Streaming** – Message queues (Kafka, RabbitMQ)  
+✅ **Tree/Graph Traversal** – BFS (Breadth-First Search)  
+✅ **Printing Jobs** – Printer queue system  
+✅ **Network Requests** – Handling requests in a web server  
+
+---
+
+## **Time Complexity**
+| Operation | Complexity |
+|-----------|-----------|
+| Enqueue   | O(1)      |
+| Dequeue   | O(1)      |
+| Peek      | O(1)      |
+
+---
+
+## **Why Use a Doubly Linked List Instead of a Singly Linked List for a Queue?**
+
+### **1. Efficient Dequeue Operation (O(1))**
+- In a **singly linked list**, removing from the front (`Dequeue()`) is **O(1)**, but there is **no direct way** to remove from the rear without traversing the entire list (`O(n)`).
+- A **doubly linked list** allows **O(1) removal from both front and rear** since each node maintains a pointer to both the **next** and **previous** nodes.
+
+📌 **Why does this matter?**  
+If you need a **Deque (Double-ended Queue)** where elements can be removed from **both ends**, a doubly linked list is the better choice.
+
+---
+
+### **2. Faster Traversal in Both Directions**
+- In a **singly linked list**, you can only traverse **forward**.
+- In a **doubly linked list**, you can traverse **both forward and backward**, making operations like **reverse traversal** or **quick access to the previous element** much easier.
+
+📌 **Why does this matter?**  
+If the queue needs bidirectional operations (like **undo/redo mechanisms**), doubly linked lists are more efficient.
+
+---
+
+### **3. More Flexibility for Advanced Queues**
+- Implementing **priority queues** or **circular queues** becomes **easier** with a doubly linked list.
+- You can maintain **head and tail pointers** for **constant-time insertions and deletions** at both ends.
+
+📌 **Why does this matter?**  
+If the queue **needs modifications or additional operations**, a doubly linked list provides **more flexibility**.
+
+---
+
+### **When to Use a Singly Linked List Instead?**
+✅ If you only need a **basic FIFO queue**  
+✅ If you **only enqueue at the rear and dequeue from the front**  
+✅ If you want to **save memory** (since a doubly linked list requires extra space for the `prev` pointer)  
+
+📌 **Bottom Line:**  
+If the queue requires **only front operations**, a **singly linked list** is fine.  
+If the queue needs **both front and rear operations**, a **doubly linked list** is better. 🚀
+

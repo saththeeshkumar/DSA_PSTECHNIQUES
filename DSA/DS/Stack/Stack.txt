@@ -1,0 +1,62 @@
+A **stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. This means the last element added to the stack is the first one to be removed.
+
+### **Basic Operations**
+1. **Push** – Adds an element to the top of the stack.
+2. **Pop** – Removes and returns the top element.
+3. **Peek (Top)** – Returns the top element without removing it.
+4. **IsEmpty** – Checks if the stack is empty.
+5. **Size** – Returns the number of elements in the stack.
+
+### **Example Implementations**
+- **Using an array (fixed size)**
+- **Using a linked list (dynamic size)**
+
+### **Use Cases of Stack**
+- **Function Call Stack** (manages function calls in programming)
+- **Undo/Redo operations** (text editors, Photoshop, etc.)
+- **Expression Evaluation** (postfix, prefix, and infix conversions)
+- **Backtracking Algorithms** (solving mazes, navigating web pages)
+- **Parentheses Matching** (checking balanced brackets in expressions)
+
+### **Example in Golang**
+Using a slice:
+```go
+package main
+
+import "fmt"
+
+type Stack struct {
+    items []int
+}
+
+func (s *Stack) Push(item int) {
+    s.items = append(s.items, item)
+}
+
+func (s *Stack) Pop() int {
+    if len(s.items) == 0 {
+        fmt.Println("Stack is empty")
+        return -1
+    }
+    last := s.items[len(s.items)-1]
+    s.items = s.items[:len(s.items)-1]
+    return last
+}
+
+func (s *Stack) Peek() int {
+    if len(s.items) == 0 {
+        fmt.Println("Stack is empty")
+        return -1
+    }
+    return s.items[len(s.items)-1]
+}
+
+func main() {
+    s := Stack{}
+    s.Push(10)
+    s.Push(20)
+    fmt.Println(s.Pop())  // Output: 20
+    fmt.Println(s.Peek()) // Output: 10
+}
+```
+

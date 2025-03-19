@@ -1,0 +1,65 @@
+
+Types of Sorting : (BSIMQHCRBS)
+-------------------
+
+1. Bubble Sort  
+2. Selection Sort  
+3. Insertion Sort  
+4. Merge Sort  
+5. Quick Sort  
+6. Heap Sort  
+7. Counting Sort  
+8. Radix Sort  
+9. Bucket Sort  
+10. Shell Sort  
+
+
+In Space sorting Algorithm:
+-----------------------------
+
+     if the sorting Algorithm sort all the elements without using extra memory or,
+sort all the elements with auxillary space complexity as O(1) is called In Space sorting Algorithm.
+
+    Chat_GPT : An in-place sorting algorithm is one that requires only a constant amount of extra space beyond the input data being sorted.
+The algorithm modifies the original array or list without using significant additional memory (no additional arrays or data structures).
+
+    Example : Selection Sort, Bubble sort ,Insertion sort
+
+
+Heap Sort :
+------------
+
+     Priority Queue or Priority
+     --------------------------
+               1. Each item in the queue is given some Priority and further dequeue operation will done based on the Priority.
+               2. We can efficiently implement Priority queue based on the binary heap.
+
+
+ 1. Binary Heap 
+ --------------
+
+                 Binary heap is a complete binary heap tree which satisfies the heap ordering property.
+
+    Full binary tree vs complete binary tree
+    ----------------------------------------
+
+           Full : it is a tree in which every node other than the leaves has two children.
+
+           complete : it is a full tree in which the last level may contain lesser nodes but it should be as left as possible.
+
+    Min Heap vs Max Heap
+    ---------------------
+           Min : every parent node value will be lesser than the children's value.       
+
+
+
+
+
+
+Quick Sort:
+------------
+
+important Terms : 
+                   1. Divide and Conquer algorithm. 
+                   2. Three major task : 1. PIVOT element Selection 2. Partition function(Partition logic) 3. Sub arrays
+                   3. PIndex - Partition variable : i - iterating variable
